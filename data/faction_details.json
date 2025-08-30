@@ -1,0 +1,93 @@
+{
+  "life": {
+    "LABEL": "life",
+    "ID": "life",
+    "ALIES": [
+      "order",
+      "nature"
+    ],
+    "ENEMIES": [
+      "death",
+      "chaos"
+    ],
+    "RACES": [
+      "human"
+    ]
+  },
+  "order": {
+    "LABEL": "order",
+    "ID": "order",
+    "ALIES": [
+      "life",
+      "death"
+    ],
+    "ENEMIES": [
+      "chaos",
+      "nature"
+    ],
+    "RACES": [
+      "dwarf"
+    ]
+  },
+  "death": {
+    "LABEL": "death",
+    "ID": "death",
+    "ALIES": [
+      "chaos",
+      "order"
+    ],
+    "ENEMIES": [
+      "life",
+      "nature"
+    ],
+    "RACES": [
+      "human"
+    ]
+  },
+  "chaos": {
+    "LABEL": "chaos",
+    "ID": "chaos",
+    "ALIES": [
+      "death",
+      "nature"
+    ],
+    "ENEMIES": [
+      "order",
+      "life"
+    ],
+    "RACES": [
+      "elf"
+    ]
+  },
+  "nature": {
+    "LABEL": "nature",
+    "ID": "nature",
+    "ALIES": [
+      "life",
+      "chaos"
+    ],
+    "ENEMIES": [
+      "order",
+      "death"
+    ],
+    "RACES": [
+      "elf",
+      "dwarf"
+    ]
+  },
+  "might": {
+    "LABEL": "might",
+    "ID": "might",
+    "ALIES": [],
+    "ENEMIES": [
+      "chaos",
+      "order",
+      "life",
+      "death"
+    ],
+    "RACES": [
+      "orc",
+      "human"
+    ]
+  }
+}

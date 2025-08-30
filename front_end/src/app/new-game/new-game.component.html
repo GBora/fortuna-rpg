@@ -1,0 +1,87 @@
+<div>
+  <div class="row mt-3 text-center">
+    <h1>Character Creation</h1>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-6">
+      <div class="row">
+        <div class="col-2 label-top">
+          Name:
+        </div>
+        <div class="col-7">
+          <input type="text" class="form-control" [(ngModel)]="selectedName">
+        </div>
+        <div class="col-3">
+          <button class="btn btn-primary w-100"
+                  [disabled]="(!selectedName || selectedName.length <= 3) || !selectedClass">Play
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="row">
+        <div class="col-2 label-top">
+          Faction:
+        </div>
+        <div class="col-10">
+          <ng-select [(ngModel)]="selectedFaction">
+            @for (option of factionOptions; track option) {
+              <ng-option [value]="option" class="text-capitalize">{{ option.LABEL }}</ng-option>
+            }
+          </ng-select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-6">
+      @if (selectedFaction) {
+        <div class="row">
+          <div class="col-2 label-top">
+            Race:
+          </div>
+          <div class="col-10">
+            <ng-select [(ngModel)]="selectedRaceId" (change)="onRaceChanged($event)">
+              @for (option of selectedFaction.RACES; track option) {
+                <ng-option [value]="option" class="text-capitalize">{{ option }}</ng-option>
+              }
+            </ng-select>
+          </div>
+        </div>
+      }
+
+      @if (selectedRace) {
+        <div class="row mt-3">
+          <app-race-panel [race]="selectedRace"></app-race-panel>
+        </div>
+      }
+    </div>
+
+    <div class="col-6">
+      @if (selectedRaceId) {
+        <div class="row">
+          <div class="col-2 label-top">Class</div>
+          <div class="col-10">
+            <div class="">
+              <ng-select [(ngModel)]="selectedClassId" (change)="onClassChanged($event)">
+                @for (option of selectedFaction.CLASSES; track option) {
+                  <ng-option [value]="option" class="text-capitalize">{{ option }}</ng-option>
+                }
+              </ng-select>
+            </div>
+          </div>
+        </div>
+      }
+
+      @if (selectedClass) {
+        <div class="row mt-3">
+          <app-class-panel [playerClass]="selectedClass"></app-class-panel>
+        </div>
+      }
+    </div>
+
+  </div>
+</div>

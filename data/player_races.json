@@ -1,0 +1,42 @@
+[
+  {
+    "ID": "human",
+    "LABEL": "Human",
+    "LIFE": 0,
+    "ORDER": 0,
+    "DEATH": 0,
+    "CHAOS": 0,
+    "NATURE": 0,
+    "MIGHT": 1
+  },
+  {
+    "ID": "orc",
+    "LABEL": "Orc",
+    "LIFE": 0,
+    "ORDER": 0,
+    "DEATH": 0,
+    "CHAOS": 0,
+    "NATURE": 0,
+    "MIGHT": 1
+  },
+  {
+    "ID": "elf",
+    "LABEL": "Elf",
+    "LIFE": 0,
+    "ORDER": 0,
+    "DEATH": 0,
+    "CHAOS": 1,
+    "NATURE": 0,
+    "MIGHT": 0
+  },
+  {
+    "ID": "dwarf",
+    "LABEL": "Dwarf",
+    "LIFE": 0,
+    "ORDER": 1,
+    "DEATH": 0,
+    "CHAOS": 0,
+    "NATURE": 0,
+    "MIGHT": 0
+  }
+]

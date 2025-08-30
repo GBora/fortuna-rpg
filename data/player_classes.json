@@ -1,0 +1,123 @@
+[
+  {
+    "LABEL": "Priest",
+    "ID": "priest",
+    "AFFINITY": "life",
+    "LIFE": 3,
+    "ORDER": 1,
+    "DEATH": 0,
+    "CHAOS": 0,
+    "NATURE": 1,
+    "MIGHT": 2
+  },
+  {
+    "LABEL": "Knight",
+    "ID": "knight",
+    "AFFINITY": "life",
+    "LIFE": 2,
+    "ORDER": 1,
+    "DEATH": 0,
+    "CHAOS": 0,
+    "NATURE": 0,
+    "MIGHT": 3
+  },
+  {
+    "LABEL": "Gendarme",
+    "ID": "gendarme",
+    "AFFINITY": "order",
+    "LIFE": 1,
+    "ORDER": 3,
+    "DEATH": 1,
+    "CHAOS": 0,
+    "NATURE": 0,
+    "MIGHT": 2
+  },
+  {
+    "LABEL": "Wizard",
+    "ID": "wizard",
+    "AFFINITY": "order",
+    "LIFE": 2,
+    "ORDER": 3,
+    "DEATH": 2,
+    "CHAOS": 0,
+    "NATURE": 0,
+    "MIGHT": 1
+  },
+  {
+    "LABEL": "Death Knight",
+    "ID": "death_knight",
+    "AFFINITY": "death",
+    "LIFE": 0,
+    "ORDER": 1,
+    "DEATH": 3,
+    "CHAOS": 2,
+    "NATURE": 0,
+    "MIGHT": 3
+  },
+  {
+    "LABEL": "Necromancer",
+    "ID": "necromancer",
+    "AFFINITY": "death",
+    "LIFE": 0,
+    "ORDER": 1,
+    "DEATH": 3,
+    "CHAOS": 2,
+    "NATURE": 0,
+    "MIGHT": 1
+  },
+  {
+    "LABEL": "Rogue",
+    "ID": "rogue",
+    "AFFINITY": "chaos",
+    "LIFE": 0,
+    "ORDER": 0,
+    "DEATH": 1,
+    "CHAOS": 3,
+    "NATURE": 1,
+    "MIGHT": 2
+  },
+  {
+    "LABEL": "Sorcerer",
+    "ID": "sorcerer",
+    "AFFINITY": "chaos",
+    "LIFE": 0,
+    "ORDER": 0,
+    "DEATH": 2,
+    "CHAOS": 3,
+    "NATURE": 1,
+    "MIGHT": 1
+  },
+  {
+    "LABEL": "Ranger",
+    "ID": "ranger",
+    "AFFINITY": "nature",
+    "LIFE": 1,
+    "ORDER": 0,
+    "DEATH": 0,
+    "CHAOS": 1,
+    "NATURE": 2,
+    "MIGHT": 3
+  },
+  {
+    "LABEL": "Druid",
+    "ID": "druid",
+    "AFFINITY": "nature",
+    "LIFE": 1,
+    "ORDER": 0,
+    "DEATH": 0,
+    "CHAOS": 1,
+    "NATURE": 3,
+    "MIGHT": 2
+  },
+  {
+    "LABEL": "Barbarian",
+    "ID": "barbarian",
+    "AFFINITY": "might",
+    "LIFE": 1,
+    "ORDER": 0,
+    "DEATH": 0,
+    "CHAOS": 0,
+    "NATURE": 1,
+    "MIGHT": 3
+  }
+]
