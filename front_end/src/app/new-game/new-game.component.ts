@@ -7,6 +7,7 @@ import {getPlayerRace} from '../api-access/get-player-race';
 import {RacePanelComponent} from '../race-panel/race-panel.component';
 import {getPlayerClass} from '../api-access/get-player-class';
 import {ClassPanelComponent} from '../class-panel/class-panel.component';
+import {startGame} from '../api-access/start_game';
 
 @Component({
   selector: 'app-new-game',
@@ -44,8 +45,13 @@ export class NewGameComponent implements OnInit{
   }
 
   async startPlay() {
+    let playerCharacter = {
+      NAME: this.selectedName,
+      CLASS: this.selectedClass.LABEL,
+      FACTION: this.selectedFaction.LABEL
+    }
     // create object for new world merge race, class and name
-    // send object to BE
+    let gameId = await startGame(playerCharacter);
     // save ID
   }
 }
