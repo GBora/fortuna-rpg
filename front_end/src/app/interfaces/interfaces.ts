@@ -31,3 +31,19 @@ export interface PlayerClass {
 }
 
 export type IPlayerClassWithStats = Race & AffinityStats;
+
+export interface IPlayerHero {
+  NAME: string;
+  CLASS: string;
+  FACTION: string;
+  LEVEL: number;
+  GOLD: number;
+  XP: number;
+  INVENTORY: any[]; // Replace `any` with a more specific type if possible (e.g., `Item[]`)
+  LIFE: number;
+  ORDER: number;
+  DEATH: number;
+  CHAOS: number;
+  NATURE: number;
+  MIGHT: number;
+}

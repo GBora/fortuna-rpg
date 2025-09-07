@@ -8,6 +8,9 @@ import {RacePanelComponent} from '../race-panel/race-panel.component';
 import {getPlayerClass} from '../api-access/get-player-class';
 import {ClassPanelComponent} from '../class-panel/class-panel.component';
 import {startGame} from '../api-access/start_game';
+import {combineCommonFields} from '../fe-utils/combineCommonFields';
+import {GameState} from '../data-store/dataStore';
+import {saveGameStateCurrent} from '../services/storage-service.service';
 
 @Component({
   selector: 'app-new-game',
@@ -48,10 +51,27 @@ export class NewGameComponent implements OnInit{
     let playerCharacter = {
       NAME: this.selectedName,
       CLASS: this.selectedClass.LABEL,
-      FACTION: this.selectedFaction.LABEL
+      FACTION: this.selectedFaction.LABEL,
+      LEVEL: 1,
+      GOLD: 0,
+      XP: 0,
+      INVENTORY: [],
+      LIFE: 0,
+      ORDER: 0,
+      DEATH: 0,
+      CHAOS: 0,
+      NATURE: 0,
+      MIGHT: 0
     }
-    // create object for new world merge race, class and name
+    playerCharacter = combineCommonFields(playerCharacter, this.selectedClass);
+    playerCharacter = combineCommonFields(playerCharacter, this.selectedRace);
     let gameId = await startGame(playerCharacter);
-    // save ID
+    let gameState: GameState = {
+      gameLost: false,
+      worldId: gameId,
+      currentRoute: "new-game",
+      hero: playerCharacter
+    }
+    saveGameStateCurrent(gameState);
   }
 }

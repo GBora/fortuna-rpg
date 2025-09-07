@@ -14,7 +14,8 @@
         </div>
         <div class="col-3">
           <button class="btn btn-primary w-100"
-                  [disabled]="(!selectedName || selectedName.length <= 3) || !selectedClass">Play
+                  [disabled]="(!selectedName || selectedName.length <= 3) || !selectedClass"
+                  (click)="startPlay()">Play
           </button>
         </div>
       </div>

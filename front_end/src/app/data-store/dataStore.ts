@@ -1,10 +1,13 @@
 import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import { hasCurrentGame, readLatestGame, saveGameStateCurrent } from '../services/storage-service.service';
 import _ from 'lodash';
+import {IPlayerHero} from '../interfaces/interfaces';
 
 export type GameState = {
   gameLost: boolean;
   currentRoute: string;
+  worldId: string;
+  hero: IPlayerHero | null
 };
 
 const getInitialState = (): GameState => {
@@ -14,7 +17,9 @@ const getInitialState = (): GameState => {
 
   return {
     gameLost: false,
-    currentRoute: ""
+    currentRoute: "",
+    worldId: "NEW",
+    hero: null
   }
 }
 
@@ -29,6 +34,8 @@ export const GameStateStore = signalStore(
        const updatedState: GameState = {
         gameLost: store.gameLost(),
         currentRoute: store.currentRoute(),
+         worldId: store.worldId(),
+         hero: store.hero()
       };
       saveGameStateCurrent(updatedState);
     },
