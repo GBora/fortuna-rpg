@@ -4,9 +4,6 @@ import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-affinity-block',
-  imports: [
-    NgOptimizedImage
-  ],
   templateUrl: './affinity-block.component.html',
   styleUrl: './affinity-block.component.scss'
 })

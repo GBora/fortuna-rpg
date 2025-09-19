@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { GameState } from '../data-store/dataStore';
+import {GameState} from '../interfaces/interfaces';
+
 
 @Injectable({
   providedIn: 'root'

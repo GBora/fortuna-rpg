@@ -1,7 +1,7 @@
 import axios from 'axios';
-import {IFaction, IPlayerClassWithStats, IRaceWithStats} from '../interfaces/interfaces';
+import {IFaction, PlayerClassWithStats, IRaceWithStats} from '../interfaces/interfaces';
 
-export const getPlayerClass = async (id:string): Promise<IPlayerClassWithStats> => {
+export const getPlayerClass = async (id:string): Promise<PlayerClassWithStats> => {
   const API_BASE_URL = 'http://localhost:5000';
   const PLAYER_FACTIONS_ENDPOINT = '/player-classes';
 

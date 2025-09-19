@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NgOptionComponent, NgSelectComponent} from '@ng-select/ng-select';
 import {FormsModule} from '@angular/forms';
-import {IFaction, IPlayerClassWithStats, IRaceWithStats} from '../interfaces/interfaces';
+import {IFaction, PlayerClassWithStats, IRaceWithStats, GameState} from '../interfaces/interfaces';
 import {getPlayerFactions} from '../api-access/get-player-factions';
 import {getPlayerRace} from '../api-access/get-player-race';
 import {RacePanelComponent} from '../race-panel/race-panel.component';
@@ -9,8 +9,9 @@ import {getPlayerClass} from '../api-access/get-player-class';
 import {ClassPanelComponent} from '../class-panel/class-panel.component';
 import {startGame} from '../api-access/start_game';
 import {combineCommonFields} from '../fe-utils/combineCommonFields';
-import {GameState} from '../data-store/dataStore';
+// import {GameState} from '../data-store/dataStore';
 import {saveGameStateCurrent} from '../services/storage-service.service';
+import {addRooms} from '../room-utils/roomUtils';
 
 @Component({
   selector: 'app-new-game',
@@ -29,7 +30,7 @@ export class NewGameComponent implements OnInit{
 
   selectedFaction: IFaction | null = null;
   selectedRace: IRaceWithStats | null = null;
-  selectedClass: IPlayerClassWithStats | null = null;
+  selectedClass: PlayerClassWithStats | null = null;
 
   selectedRaceId: string | null = null;
   selectedClassId: string | null = null;
@@ -65,13 +66,17 @@ export class NewGameComponent implements OnInit{
     }
     playerCharacter = combineCommonFields(playerCharacter, this.selectedClass);
     playerCharacter = combineCommonFields(playerCharacter, this.selectedRace);
-    let gameId = await startGame(playerCharacter);
     let gameState: GameState = {
       gameLost: false,
-      worldId: gameId,
+      worldId: "NULL",
       currentRoute: "new-game",
-      hero: playerCharacter
-    }
+      hero: playerCharacter,
+      startRoom: {},
+      dungeonRooms: []
+    };
+    gameState = addRooms(gameState);
+    console.log(gameState);
+    gameState = await startGame(gameState);
     saveGameStateCurrent(gameState);
   }
 }

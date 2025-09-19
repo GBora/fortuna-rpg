@@ -1,6 +1,7 @@
 import axios from 'axios';
+import {GameState} from '../interfaces/interfaces';
 
-export const startGame = async (playerCharacter: any): Promise<string> => {
+export const startGame = async (game: GameState): Promise<any> => {
   const API_BASE_URL = 'http://localhost:5000';
   const PLAYER_FACTIONS_ENDPOINT = '/start-game';
 
@@ -10,7 +11,7 @@ export const startGame = async (playerCharacter: any): Promise<string> => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(playerCharacter)
+    body: JSON.stringify(game)
   };
 
   try {

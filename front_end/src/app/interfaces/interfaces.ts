@@ -30,9 +30,9 @@ export interface PlayerClass {
   DESCRIPTION?: string; // Optional description field
 }
 
-export type IPlayerClassWithStats = Race & AffinityStats;
+export type PlayerClassWithStats = Race & AffinityStats;
 
-export interface IPlayerHero {
+export interface PlayerHero {
   NAME: string;
   CLASS: string;
   FACTION: string;
@@ -46,4 +46,23 @@ export interface IPlayerHero {
   CHAOS: number;
   NATURE: number;
   MIGHT: number;
+}
+
+export interface GameState {
+  gameLost: boolean;
+  worldId: string;
+  currentRoute: string;
+  hero: PlayerHero | null;
+  startRoom: any;
+  dungeonRooms: any[];
+}
+
+export interface Room {
+  ID: string;
+  DESCRIPTION: string;
+  NORTH: string | null;
+  SOUTH: string | null;
+  WEST: string | null;
+  EAST: string | null;
+  ENTRANCE: string | null;
 }

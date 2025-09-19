@@ -1,10 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { deleteSavedGame, getAllSaveGames, readGameStateByRegistry } from '../services/storage-service.service';
 import { CommonModule } from '@angular/common';
-import { GameState, GameStateStore } from '../data-store/dataStore';
+import { GameStateStore } from '../data-store/dataStore';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTrash, faUpload } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import {GameState} from '../interfaces/interfaces';
 
 
 @Component({

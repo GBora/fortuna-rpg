@@ -16,3 +16,4 @@ build/
 .idea/
 exp_prompt.txt
 front_end/node_modules/
+game_data/*.db

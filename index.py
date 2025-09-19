@@ -1,7 +1,7 @@
 import os
 import uuid
 
-from flask import Flask, jsonify
+from flask import Flask,request, jsonify
 from flask_cors import CORS
 from utils.get_from_config import get_from_config_list, get_from_config_by_id
 
@@ -28,8 +28,11 @@ def get_player_classes(id):
     return jsonify(data)
 
 @app.route('/start-game', methods=['POST'])
-def start_game():
-    return jsonify(uuid.uuid4())
+def start_game(game):
+    content = request.json;
+    content["worldId"] = uuid.uuid4()
+    # generate rooms
+    return jsonify(content)
 
 if __name__ == '__main__':
     # Use environment variables for config (e.g., port)
