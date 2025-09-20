@@ -1,12 +1,19 @@
 import os
 import uuid
 
-from flask import Flask,request, jsonify
+from flask import Flask, request, jsonify, json
 from flask_cors import CORS
+from models import db, JsonData
 from utils.get_from_config import get_from_config_list, get_from_config_by_id
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(os.path.dirname(__file__), 'game_data', 'data.db')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db.init_app(app)
+
+with app.app_context():
+    db.create_all()
 
 @app.route('/')
 def hello():
@@ -28,10 +35,15 @@ def get_player_classes(id):
     return jsonify(data)
 
 @app.route('/start-game', methods=['POST'])
-def start_game(game):
-    content = request.json;
-    content["worldId"] = uuid.uuid4()
-    # generate rooms
+def start_game():
+    content = request.json
+    content["worldId"] = str(uuid.uuid4())
+    if not content or 'worldId' not in content:
+        return jsonify({"error": "No JSON data or UUID provided"}), 400
+
+    new_entry = JsonData(id=content['worldId'], data=json.dumps(content))
+    db.session.add(new_entry)
+    db.session.commit()
     return jsonify(content)
 
 if __name__ == '__main__':
