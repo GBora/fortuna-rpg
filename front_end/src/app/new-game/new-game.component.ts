@@ -12,6 +12,7 @@ import {combineCommonFields} from '../fe-utils/combineCommonFields';
 // import {GameState} from '../data-store/dataStore';
 import {saveGameStateCurrent} from '../services/storage-service.service';
 import {addRooms} from '../room-utils/roomUtils';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-new-game',
@@ -25,7 +26,7 @@ import {addRooms} from '../room-utils/roomUtils';
   templateUrl: './new-game.component.html',
   styleUrl: './new-game.component.scss'
 })
-export class NewGameComponent implements OnInit{
+export class NewGameComponent implements OnInit  {
   factionOptions: IFaction[] = [];
 
   selectedFaction: IFaction | null = null;
@@ -35,6 +36,8 @@ export class NewGameComponent implements OnInit{
   selectedRaceId: string | null = null;
   selectedClassId: string | null = null;
   selectedName: string | null = null
+
+  constructor(private router: Router) {}
 
   async ngOnInit(): Promise<void> {
     this.factionOptions = await getPlayerFactions();
@@ -77,7 +80,8 @@ export class NewGameComponent implements OnInit{
     gameState = addRooms(gameState);
     gameState = await startGame(gameState);
     saveGameStateCurrent(gameState);
-    console.log(gameState);
-    // go to route that actually renders the rooms
+    let startRoomId = gameState.startRoom.ID;
+    console.log(startRoomId);
+    await this.router.navigate(['/game-room', startRoomId]);
   }
 }

@@ -1,14 +1,6 @@
 import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import { hasCurrentGame, readLatestGame, saveGameStateCurrent } from '../services/storage-service.service';
-import _ from 'lodash';
 import {GameState, PlayerHero} from '../interfaces/interfaces';
-
-// export type GameState = {
-//   gameLost: boolean;
-//   currentRoute: string;
-//   worldId: string;
-//   hero: PlayerHero | null
-// };
 
 const getInitialState = (): GameState => {
   if (hasCurrentGame()) {

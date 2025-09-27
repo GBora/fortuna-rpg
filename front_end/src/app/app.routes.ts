@@ -18,7 +18,7 @@ export const routes: Routes = [
         component: SavesMenuComponent
     },
     {
-      path: 'game-room',
+      path: 'game-room/:id',
       component: GameRoomComponent
     },
     { path: '',   redirectTo: '/main-menu', pathMatch: 'full' }
