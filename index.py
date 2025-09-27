@@ -29,7 +29,7 @@ def get_player_classes(id):
 
 @app.route('/start-game', methods=['POST'])
 def start_game(game):
-    content = request.json;
+    content = request.json
     content["worldId"] = uuid.uuid4()
     # generate rooms
     return jsonify(content)
