@@ -75,8 +75,9 @@ export class NewGameComponent implements OnInit{
       dungeonRooms: []
     };
     gameState = addRooms(gameState);
-    console.log(gameState);
     gameState = await startGame(gameState);
     saveGameStateCurrent(gameState);
+    console.log(gameState);
+    // go to route that actually renders the rooms
   }
 }
