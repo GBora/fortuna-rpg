@@ -1,6 +1,12 @@
 <div>
   @if (room) {
-    <div>{{room.DESCRIPTION}}</div>
+    <div>
+      <div>{{room.DESCRIPTION}}</div>
+      <div><a [routerLink]="['/game-room', room.EAST]" [hidden]="room.EAST.length === 0">EAST</a></div>
+      <div><a [routerLink]="['/game-room', room.SOUTH]" [hidden]="room.SOUTH.length === 0">SOUTH</a></div>
+      <div><a [routerLink]="['/game-room', room.WEST]" [hidden]="room.WEST.length === 0">WEST</a></div>
+      <div><a [routerLink]="['/game-room', room.NORTH]" [hidden]="room.NORTH.length === 0">NORTH</a></div>
+    </div>
   } @else {
     <div>Room not available</div>
   }

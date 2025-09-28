@@ -1,11 +1,13 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {GameState, Room} from '../interfaces/interfaces';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, RouterLink} from '@angular/router';
 import {GameStateStore} from '../data-store/dataStore';
 
 @Component({
   selector: 'app-game-room',
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './game-room.component.html',
   styleUrl: './game-room.component.scss'
 })
@@ -28,6 +30,7 @@ export class GameRoomComponent implements OnInit {
     this.route.params.subscribe(params => {
       const id = params['id'];
       this.findRoom(id);
+      console.log(this.room);
     });
   }
 
