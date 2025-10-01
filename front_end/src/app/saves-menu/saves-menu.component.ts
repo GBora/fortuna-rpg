@@ -6,6 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTrash, faUpload } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import {GameState} from '../interfaces/interfaces';
+import {getSavedGamesList, SavedGameData} from '../api-access/get-saved-games';
 
 
 @Component({
@@ -15,8 +16,8 @@ import {GameState} from '../interfaces/interfaces';
   styleUrl: './saves-menu.component.scss'
 })
 export class SavesMenuComponent implements OnInit {
-  savesList: string[] = [];
-  savedShips: GameState[] = [];
+  savesList: SavedGameData[] = [];
+
   faTrash = faTrash;
   faUpload = faUpload;
 
@@ -24,24 +25,14 @@ export class SavesMenuComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    this.savesList = getAllSaveGames();
-    this.savesList.forEach((registry) => {
-      this.savedShips.push(readGameStateByRegistry(registry));
-    })
+  async ngOnInit(): Promise<void> {
+    this.savesList = await getSavedGamesList();
   }
 
-  loadSavedGame(game: GameState): void {
-    this.store.updateState(game);
-    this.router.navigate([this.store.currentRoute()]);
+  loadSavedGame(game: SavedGameData): void {
+    console.log(game.worldId);
   }
 
-  deleteSave(game: GameState): void {
-    deleteSavedGame(game);
-    this.savesList = getAllSaveGames();
-    this.savedShips = [];
-    this.savesList.forEach((registry) => {
-      this.savedShips.push(readGameStateByRegistry(registry));
-    })
+  deleteSave(): void {
   }
 }

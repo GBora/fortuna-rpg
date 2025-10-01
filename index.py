@@ -46,6 +46,37 @@ def start_game():
     db.session.commit()
     return jsonify(content)
 
+@app.route('/saved-games', methods=['GET'])
+def get_saved_games():
+
+    all_entries = JsonData.query.all()
+
+    saves = []
+    for entry in all_entries:
+        try:
+            data = json.loads(entry.data)
+            save = {
+                "worldId": data['worldId'],
+                "hero": data['hero']
+            }
+            saves.append(save)
+        except json.JSONDecodeError:
+            # Handle invalid JSON (optional)
+            continue
+    return jsonify(saves)
+
+@app.route('/saved-games/<id>', methods=['GET'])
+def get_saved_game(id):
+
+    savedGame = JsonData.query.get(id)
+    data = json.loads(savedGame.data)
+
+    return jsonify(data)
+
+# saved-games/id PUT
+
+# saved-games/id DELETE
+
 if __name__ == '__main__':
     # Use environment variables for config (e.g., port)
     port = int(os.environ.get('PORT', 5000))
