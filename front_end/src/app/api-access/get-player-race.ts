@@ -1,13 +1,14 @@
 import axios from 'axios';
 import {IFaction, IRaceWithStats} from '../interfaces/interfaces';
+import {environment} from '../../environments/environment';
 
 export const getPlayerRace = async (id:string): Promise<IRaceWithStats> => {
-  const API_BASE_URL = 'http://localhost:5000';
-  const PLAYER_FACTIONS_ENDPOINT = '/player-races';
+  const API_BASE_URL = environment.apiBaseUrl;
+  const PLAYER_RACES_ENDPOINT = '/player-races';
 
   const config = {
     method: 'get',
-    url: `${API_BASE_URL}${PLAYER_FACTIONS_ENDPOINT}/${id}`,
+    url: `${API_BASE_URL}${PLAYER_RACES_ENDPOINT}/${id}`,
     headers: {
       'Content-Type': 'application/json',
     },

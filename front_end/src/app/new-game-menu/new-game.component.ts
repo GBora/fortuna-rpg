@@ -81,7 +81,6 @@ export class NewGameComponent implements OnInit  {
     gameState = await startGame(gameState);
     saveGameStateCurrent(gameState);
     let startRoomId = gameState.startRoom.ID;
-    console.log(startRoomId);
     await this.router.navigate(['/game-room', startRoomId]);
   }
 }

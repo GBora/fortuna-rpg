@@ -1,15 +1,14 @@
 import axios from 'axios';
-import {PlayerHero} from '../interfaces/interfaces';
+import {environment} from '../../environments/environment';
+import {GameState} from '../interfaces/interfaces';
 
-
-
-export const getSavedGamesList = async (): Promise<any> => {
-  const API_BASE_URL = 'http://localhost:5000';
-  const PLAYER_FACTIONS_ENDPOINT = '/saved-games';
+export const getSavedGameById = async (id: string): Promise<GameState> => {
+  const API_BASE_URL = environment.apiBaseUrl;
+  const PLAYER_SAVES_ENDPOINT = '/saved-games';
 
   const config = {
     method: 'get',
-    url: `${API_BASE_URL}${PLAYER_FACTIONS_ENDPOINT}`,
+    url: `${API_BASE_URL}${PLAYER_SAVES_ENDPOINT}/${id}`,
     headers: {
       'Content-Type': 'application/json',
     },

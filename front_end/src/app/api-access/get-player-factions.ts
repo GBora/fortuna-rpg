@@ -1,8 +1,9 @@
 import axios from 'axios';
 import {IFaction} from '../interfaces/interfaces';
+import {environment} from '../../environments/environment';
 
 export const getPlayerFactions = async (): Promise<IFaction[]> => {
-  const API_BASE_URL = 'http://localhost:5000';
+  const API_BASE_URL = environment.apiBaseUrl;
   const PLAYER_FACTIONS_ENDPOINT = '/player-factions';
 
   const config = {

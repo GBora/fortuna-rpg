@@ -7,6 +7,7 @@ import { faTrash, faUpload } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import {GameState} from '../interfaces/interfaces';
 import {getSavedGamesList, SavedGameData} from '../api-access/get-saved-games';
+import {getSavedGameById} from '../api-access/get-saved-game-data';
 
 
 @Component({
@@ -29,8 +30,12 @@ export class SavesMenuComponent implements OnInit {
     this.savesList = await getSavedGamesList();
   }
 
-  loadSavedGame(game: SavedGameData): void {
-    console.log(game.worldId);
+  async loadSavedGame(game: SavedGameData): Promise<void> {
+    let save: GameState = await getSavedGameById(game.worldId);
+    this.store.updateState(save);
+    // this.router.navigate([save.currentRoute]);
+    let startRoomId = save.startRoom.ID;
+    await this.router.navigate(['/game-room', startRoomId]);
   }
 
   deleteSave(): void {
