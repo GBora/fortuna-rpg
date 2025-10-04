@@ -81,12 +81,14 @@ def save_game(id):
         raise ValueError(f"No row found with id: {id}")
     entry.data = json.dumps(content)
     db.session.commit()
+    return jsonify({"success": True})
 
 @app.route('/saved-games/<id>', methods=['DELETE'])
 def delete_saved_game(id):
     entry = JsonData.query.get(id)
     db.session.delete(entry)
     db.session.commit()
+    return jsonify({"success": True})
 
 if __name__ == '__main__':
     # Use environment variables for config (e.g., port)

@@ -1,17 +1,17 @@
 import {Component, OnInit} from '@angular/core';
 import {NgOptionComponent, NgSelectComponent} from '@ng-select/ng-select';
 import {FormsModule} from '@angular/forms';
-import {IFaction, PlayerClassWithStats, IRaceWithStats, GameState} from '../interfaces/interfaces';
-import {getPlayerFactions} from '../api-access/get-player-factions';
-import {getPlayerRace} from '../api-access/get-player-race';
-import {RacePanelComponent} from '../race-panel/race-panel.component';
-import {getPlayerClass} from '../api-access/get-player-class';
-import {ClassPanelComponent} from '../class-panel/class-panel.component';
-import {startGame} from '../api-access/start_game';
-import {combineCommonFields} from '../fe-utils/combineCommonFields';
+import {IFaction, PlayerClassWithStats, IRaceWithStats, GameState} from '../../interfaces/interfaces';
+import {getPlayerFactions} from '../../api-access/get-player-factions';
+import {getPlayerRace} from '../../api-access/get-player-race';
+import {RacePanelComponent} from '../../race-panel/race-panel.component';
+import {getPlayerClass} from '../../api-access/get-player-class';
+import {ClassPanelComponent} from '../../class-panel/class-panel.component';
+import {startGame} from '../../api-access/start_game';
+import {combineCommonFields} from '../../fe-utils/combineCommonFields';
 // import {GameState} from '../data-store/dataStore';
-import {saveGameStateCurrent} from '../services/storage-service.service';
-import {addRooms} from '../room-utils/roomUtils';
+import {saveGameStateCurrent} from '../../services/storage-service.service';
+import {addRooms} from '../../room-utils/roomUtils';
 import {Router} from '@angular/router';
 
 @Component({

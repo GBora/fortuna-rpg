@@ -2,7 +2,7 @@
   {
     "LABEL": "Priest",
     "ID": "priest",
-    "AFFINITY": "life",
+    "AFFINITY": "Life",
     "LIFE": 3,
     "ORDER": 1,
     "DEATH": 0,
@@ -13,7 +13,7 @@
   {
     "LABEL": "Knight",
     "ID": "knight",
-    "AFFINITY": "life",
+    "AFFINITY": "Life",
     "LIFE": 2,
     "ORDER": 1,
     "DEATH": 0,
@@ -24,7 +24,7 @@
   {
     "LABEL": "Gendarme",
     "ID": "gendarme",
-    "AFFINITY": "order",
+    "AFFINITY": "Order",
     "LIFE": 1,
     "ORDER": 3,
     "DEATH": 1,
@@ -35,7 +35,7 @@
   {
     "LABEL": "Wizard",
     "ID": "wizard",
-    "AFFINITY": "order",
+    "AFFINITY": "Order",
     "LIFE": 2,
     "ORDER": 3,
     "DEATH": 2,
@@ -46,7 +46,7 @@
   {
     "LABEL": "Death Knight",
     "ID": "death_knight",
-    "AFFINITY": "death",
+    "AFFINITY": "Death",
     "LIFE": 0,
     "ORDER": 1,
     "DEATH": 3,
@@ -57,7 +57,7 @@
   {
     "LABEL": "Necromancer",
     "ID": "necromancer",
-    "AFFINITY": "death",
+    "AFFINITY": "Death",
     "LIFE": 0,
     "ORDER": 1,
     "DEATH": 3,
@@ -68,7 +68,7 @@
   {
     "LABEL": "Rogue",
     "ID": "rogue",
-    "AFFINITY": "chaos",
+    "AFFINITY": "Chaos",
     "LIFE": 0,
     "ORDER": 0,
     "DEATH": 1,
@@ -79,7 +79,7 @@
   {
     "LABEL": "Sorcerer",
     "ID": "sorcerer",
-    "AFFINITY": "chaos",
+    "AFFINITY": "Chaos",
     "LIFE": 0,
     "ORDER": 0,
     "DEATH": 2,
@@ -90,7 +90,7 @@
   {
     "LABEL": "Ranger",
     "ID": "ranger",
-    "AFFINITY": "nature",
+    "AFFINITY": "Nature",
     "LIFE": 1,
     "ORDER": 0,
     "DEATH": 0,
@@ -101,7 +101,7 @@
   {
     "LABEL": "Druid",
     "ID": "druid",
-    "AFFINITY": "nature",
+    "AFFINITY": "Nature",
     "LIFE": 1,
     "ORDER": 0,
     "DEATH": 0,
@@ -112,7 +112,7 @@
   {
     "LABEL": "Barbarian",
     "ID": "barbarian",
-    "AFFINITY": "might",
+    "AFFINITY": "Might",
     "LIFE": 1,
     "ORDER": 0,
     "DEATH": 0,

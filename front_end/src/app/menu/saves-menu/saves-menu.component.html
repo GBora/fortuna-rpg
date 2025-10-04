@@ -5,13 +5,13 @@
 
     <div class="row mt-2" *ngFor="let game of this.savesList">
         <div class="col-4">
-          {{ game.hero.NAME }} LVL {{game.hero.LEVEL}} {{game.hero.CLASS}} OF {{game.hero.FACTION}}
+          {{ game.hero.NAME }} Lvl {{game.hero.LEVEL}} {{game.hero.CLASS}} of {{game.hero.FACTION}}
         </div>
 
 
         <div class="col-2">
             <fa-icon [icon]="faUpload" class="pointer" (click)="loadSavedGame(game)"></fa-icon>
-            <fa-icon [icon]="faTrash" class="pointer" (click)="deleteSave()"></fa-icon>
+            <fa-icon [icon]="faTrash" class="pointer" (click)="deleteSave(game)"></fa-icon>
         </div>
     </div>
 </div>

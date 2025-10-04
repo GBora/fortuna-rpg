@@ -1,89 +1,89 @@
 {
-  "life": {
-    "LABEL": "life",
-    "ID": "life",
+  "Life": {
+    "LABEL": "Life",
+    "ID": "Life",
     "ALIES": [
-      "order",
-      "nature"
+      "Order",
+      "Nature"
     ],
     "ENEMIES": [
-      "death",
-      "chaos"
+      "Death",
+      "Chaos"
     ],
     "RACES": [
       "human"
     ]
   },
-  "order": {
-    "LABEL": "order",
-    "ID": "order",
+  "Order": {
+    "LABEL": "Order",
+    "ID": "Order",
     "ALIES": [
-      "life",
-      "death"
+      "Life",
+      "Death"
     ],
     "ENEMIES": [
-      "chaos",
-      "nature"
+      "Chaos",
+      "Nature"
     ],
     "RACES": [
       "dwarf"
     ]
   },
-  "death": {
-    "LABEL": "death",
-    "ID": "death",
+  "Death": {
+    "LABEL": "Death",
+    "ID": "Death",
     "ALIES": [
-      "chaos",
-      "order"
+      "Chaos",
+      "Order"
     ],
     "ENEMIES": [
-      "life",
-      "nature"
+      "Life",
+      "Nature"
     ],
     "RACES": [
       "human"
     ]
   },
-  "chaos": {
-    "LABEL": "chaos",
-    "ID": "chaos",
+  "Chaos": {
+    "LABEL": "Chaos",
+    "ID": "Chaos",
     "ALIES": [
-      "death",
-      "nature"
+      "Death",
+      "Nature"
     ],
     "ENEMIES": [
-      "order",
-      "life"
+      "Order",
+      "Life"
     ],
     "RACES": [
       "elf"
     ]
   },
-  "nature": {
-    "LABEL": "nature",
-    "ID": "nature",
+  "Nature": {
+    "LABEL": "Nature",
+    "ID": "Nature",
     "ALIES": [
-      "life",
-      "chaos"
+      "Life",
+      "Chaos"
     ],
     "ENEMIES": [
-      "order",
-      "death"
+      "Order",
+      "Death"
     ],
     "RACES": [
       "elf",
       "dwarf"
     ]
   },
-  "might": {
-    "LABEL": "might",
-    "ID": "might",
+  "Might": {
+    "LABEL": "Might",
+    "ID": "Might",
     "ALIES": [],
     "ENEMIES": [
-      "chaos",
-      "order",
-      "life",
-      "death"
+      "Chaos",
+      "Order",
+      "Life",
+      "Death"
     ],
     "RACES": [
       "orc",

@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { getAllSaveGames, readGameStateCurrent } from '../services/storage-service.service';
-import { GameStateStore } from '../data-store/dataStore';
+import { getAllSaveGames, readGameStateCurrent } from '../../services/storage-service.service';
+import { GameStateStore } from '../../data-store/dataStore';
 
 @Component({
   selector: 'app-main-menu',
@@ -13,7 +13,7 @@ export class MainMenuComponent {
   readonly store = inject(GameStateStore);
 
   constructor(private router: Router) {}
-  
+
   isGameRunning() {
     let game = readGameStateCurrent();
     return game !== null && game !== undefined;

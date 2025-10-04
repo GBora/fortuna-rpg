@@ -1,49 +1,49 @@
 [
   {
-    "LABEL": "life",
-    "ID": "life",
-    "ALIES": ["order", "nature"],
-    "ENEMIES": ["death", "chaos"],
+    "LABEL": "Life",
+    "ID": "Life",
+    "ALIES": ["Order", "Nature"],
+    "ENEMIES": ["Death", "Chaos"],
     "RACES": ["human"],
     "CLASSES": ["knight", "priest"]
   },
   {
-    "LABEL": "order",
-    "ID": "order",
-    "ALIES": ["life", "death"],
-    "ENEMIES": ["chaos", "nature"],
+    "LABEL": "Order",
+    "ID": "Order",
+    "ALIES": ["Life", "Death"],
+    "ENEMIES": ["Chaos", "Nature"],
     "RACES": ["dwarf"],
     "CLASSES": ["gendarme", "wizard"]
   },
   {
-    "LABEL": "death",
-    "ID": "death",
-    "ALIES": ["chaos", "order"],
-    "ENEMIES": ["life", "nature"],
+    "LABEL": "Death",
+    "ID": "Death",
+    "ALIES": ["Chaos", "Order"],
+    "ENEMIES": ["Life", "Nature"],
     "RACES": ["human"],
-    "CLASSES": ["death knight", "necromancer"]
+    "CLASSES": ["death_knight", "necromancer"]
   },
   {
-    "LABEL": "chaos",
-    "ID": "chaos",
-    "ALIES": ["death", "nature"],
-    "ENEMIES": ["order", "life"],
+    "LABEL": "Chaos",
+    "ID": "Chaos",
+    "ALIES": ["Death", "Nature"],
+    "ENEMIES": ["Order", "Life"],
     "RACES": ["elf"],
     "CLASSES": ["rogue", "sorcerer"]
   },
   {
-    "LABEL": "nature",
-    "ID": "nature",
-    "ALIES": ["life", "chaos"],
-    "ENEMIES": ["order", "death"],
+    "LABEL": "Nature",
+    "ID": "Nature",
+    "ALIES": ["Life", "Chaos"],
+    "ENEMIES": ["Order", "Death"],
     "RACES": ["elf", "dwarf"],
     "CLASSES": ["ranger", "druid"]
   },
   {
-    "LABEL": "might",
-    "ID": "might",
+    "LABEL": "Might",
+    "ID": "Might",
     "ALIES": [],
-    "ENEMIES": ["chaos", "order", "life", "death"],
+    "ENEMIES": ["Chaos", "Order", "Life", "Death"],
     "RACES": ["orc", "human"],
     "CLASSES": ["barbarian", "rogue", "ranger"]
   }
