@@ -33,10 +33,10 @@ export class SavesMenuComponent implements OnInit {
   async loadSavedGame(game: SavedGameData): Promise<void> {
     let save: GameState = await getSavedGameById(game.worldId);
     this.store.updateState(save);
-    //TODO: patch this once saving progress
-    //this.router.navigate([save.currentRoute]);
-    let startRoomId = save.startRoom.ID;
-    await this.router.navigate(['/game-room', startRoomId]);
+    window.location.href = save.currentRoute;
+    // await this.router.navigate([save.currentRoute]);
+    // let startRoomId = save.startRoom.ID;
+    // await this.router.navigate(['/game-room', startRoomId]);
   }
 
   async deleteSave(game: SavedGameData): Promise<void> {

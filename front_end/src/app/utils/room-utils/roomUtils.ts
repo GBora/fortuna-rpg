@@ -1,7 +1,8 @@
-import {GameState, Room} from '../interfaces/interfaces';
+import {GameState, Room} from '../../interfaces/interfaces';
 import _ from 'lodash';
 import { v4 as uuidv4 } from 'uuid';
 import Chance from 'chance';
+import {getRandomOppositeFaction} from '../lore-utils/getOppositeFaction';
 
 const chance = new Chance();
 
@@ -55,7 +56,9 @@ export const addStartRoom = (initialGame: GameState): GameState => {
   let newGame = _.cloneDeep(initialGame);
   // Oh hi Mark (The Room reference)
   let theRoom = getBasicRoom();
-  theRoom.DESCRIPTION = `Starting room for ${initialGame.hero.FACTION}`;
+  //TODO: move this outside enemy to be consistent
+  let ENEMY = getRandomOppositeFaction(initialGame.hero.FACTION);
+  theRoom.DESCRIPTION = `Wellcome my disciple of ${initialGame.hero.FACTION} I have need of your heroism, the dark goddess of ${ENEMY.LABEL}`;
   theRoom.ENTRANCE = "SOUTH" // The next room is north so it makes sense the entrance would be south
   newGame.dungeonRooms.push(theRoom);
   newGame.startRoom = theRoom;
@@ -91,6 +94,7 @@ export const addMainPath = (initialGame: GameState): GameState => {
 
 export const addRooms = (initialGame: GameState): GameState => {
   let newGame = _.cloneDeep(initialGame);
+  let ENEMY = getRandomOppositeFaction(initialGame.hero.FACTION);
   newGame = addStartRoom(newGame);
   newGame = addMainPath(newGame);
   return newGame;

@@ -2,6 +2,7 @@ import {Component, inject, OnInit} from '@angular/core';
 import {GameState, Room} from '../interfaces/interfaces';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {GameStateStore} from '../data-store/dataStore';
+import {updatedSavedGame} from '../api-access/update_saved_game';
 
 @Component({
   selector: 'app-game-room',
@@ -30,11 +31,23 @@ export class GameRoomComponent implements OnInit {
     this.route.params.subscribe(params => {
       const id = params['id'];
       this.findRoom(id);
-      console.log(this.room);
+      this.updateState()
     });
   }
 
   private findRoom(id: string): void {
     this.room = this.dungeonRooms().find(room => room.ID === id) || null;
+  }
+
+  private async updateState(): Promise<void> {
+    let state: GameState = {
+      worldId: this.worldId(),
+      currentRoute: window.location.href,
+      startRoom: this.startRoom(),
+      hero: this.hero(),
+      dungeonRooms: this.dungeonRooms(),
+      gameLost: this.gameLost()
+    }
+    await updatedSavedGame(state);
   }
 }

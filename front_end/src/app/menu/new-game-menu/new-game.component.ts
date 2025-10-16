@@ -8,10 +8,10 @@ import {RacePanelComponent} from '../../race-panel/race-panel.component';
 import {getPlayerClass} from '../../api-access/get-player-class';
 import {ClassPanelComponent} from '../../class-panel/class-panel.component';
 import {startGame} from '../../api-access/start_game';
-import {combineCommonFields} from '../../fe-utils/combineCommonFields';
+import {combineCommonFields} from '../../utils/fe-utils/combineCommonFields';
 // import {GameState} from '../data-store/dataStore';
 import {saveGameStateCurrent} from '../../services/storage-service.service';
-import {addRooms} from '../../room-utils/roomUtils';
+import {addRooms} from '../../utils/room-utils/roomUtils';
 import {Router} from '@angular/router';
 
 @Component({
